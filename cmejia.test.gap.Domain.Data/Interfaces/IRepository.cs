@@ -6,7 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace cmejia.test.gap.Domain.Data
+namespace cmejia.test.gap.Domain.Data.Interfaces
 {
     public interface IRepository<T> where T : class
     {

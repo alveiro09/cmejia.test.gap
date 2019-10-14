@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using cmejia.test.gap.Domain.Data.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using System;
 using System.Collections.Generic;
@@ -8,52 +9,51 @@ using System.Threading.Tasks;
 
 namespace cmejia.test.gap.Domain.Data
 {
-    public class Repository<TEntity> : IRepository<TEntity>
-        where TEntity : class
+    public class Repository<T> : IRepository<T> where T : class
     {
         private readonly IDbContext context;
 
-        private readonly DbSet<TEntity> dbSet;
+        private readonly DbSet<T> dbSet;
 
         public Repository(IDbContext context)
         {
             this.context = context;
-            dbSet = context.Set<TEntity>();
+            dbSet = context.Set<T>();
         }
 
-        public EntityState Create(TEntity t)
+        public EntityState Create(T t)
         {
             var newEntry = dbSet.Add(t).State;
             context.SaveChanges();
             return newEntry;
         }
 
-        public EntityState Delete(TEntity t)
+        public EntityState Delete(T t)
         {
             return dbSet.Remove(t).State;
         }
-        public virtual EntityState Update(TEntity t)
+        public virtual EntityState Update(T t)
         {
             return dbSet.Update(t).State;
         }
 
-        public TEntity Get<TKey>(TKey id)
+        public T Get<TKey>(TKey id)
         {
             return dbSet.Find(id);
         }
 
-        public IQueryable<TEntity> GetAsQueryable(Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include = null)
+        public IQueryable<T> GetAsQueryable(Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null)
         {
-            IQueryable<TEntity> query = dbSet;
+            IQueryable<T> query = dbSet;
             if (include != null)
                 query = include(query);
 
             return query;
         }
 
-        public IQueryable<TEntity> GetAsQueryable(Expression<Func<TEntity, bool>> predicate, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include = null)
+        public IQueryable<T> GetAsQueryable(Expression<Func<T, bool>> predicate, Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null)
         {
-            IQueryable<TEntity> query = dbSet;
+            IQueryable<T> query = dbSet;
             if (include != null)
                 query = include(query);
 
@@ -63,9 +63,9 @@ namespace cmejia.test.gap.Domain.Data
             return query;
         }
 
-        public async Task<IEnumerable<TEntity>> GetAsync(Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include = null)
+        public async Task<IEnumerable<T>> GetAsync(Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null)
         {
-            IQueryable<TEntity> query = dbSet;
+            IQueryable<T> query = dbSet;
 
             if (include != null)
                 query = include(query);
@@ -73,9 +73,9 @@ namespace cmejia.test.gap.Domain.Data
             return await query.ToListAsync();
         }
 
-        public async Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> predicate, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include = null)
+        public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>> predicate, Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null)
         {
-            IQueryable<TEntity> query = dbSet;
+            IQueryable<T> query = dbSet;
             if (include != null)
                 query = include(query);
 
@@ -85,7 +85,7 @@ namespace cmejia.test.gap.Domain.Data
             return await query.ToListAsync();
         }
 
-        public async Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> predicate)
+        public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>> predicate)
         {
             if (predicate == null)
                 throw new ArgumentNullException(nameof(predicate));

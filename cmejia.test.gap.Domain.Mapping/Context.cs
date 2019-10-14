@@ -17,6 +17,10 @@ namespace cmejia.test.gap.Domain.Mapping
         {
         }
 
+        public Context()
+        {
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ClientMap());
