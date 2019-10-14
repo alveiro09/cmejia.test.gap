@@ -9,14 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{2E65B37E-8FD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{E59AF519-C9C0-400E-AD51-9A4FACC8D5B3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{5AA8B531-FB0C-4538-86BD-DC198162C60A}"
-	ProjectSection(SolutionItems) = preProject
-		cmejia.test.gap\Models\Client.cs = cmejia.test.gap\Models\Client.cs
-		cmejia.test.gap\Models\dbtestcmgapContext.cs = cmejia.test.gap\Models\dbtestcmgapContext.cs
-		cmejia.test.gap\Models\Policy.cs = cmejia.test.gap\Models\Policy.cs
-		cmejia.test.gap\Models\TypeCovering.cs = cmejia.test.gap\Models\TypeCovering.cs
-		cmejia.test.gap\Models\TypeRisk.cs = cmejia.test.gap\Models\TypeRisk.cs
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cmejia.test.gap.Domain", "cmejia.test.gap.Domain\cmejia.test.gap.Domain.csproj", "{C6EAC042-8A07-43FB-B5E7-122868F1006E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cmejia.test.gap.Domain.Data", "cmejia.test.gap.Domain.Data\cmejia.test.gap.Domain.Data.csproj", "{919D9D1A-2FC9-49D7-8086-2E144816E88C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cmejia.test.gap.Domain.Mapping", "cmejia.test.gap.Domain.Mapping\cmejia.test.gap.Domain.Mapping.csproj", "{14651D1E-C8C1-4574-8A19-BB6991024742}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,13 +25,27 @@ Global
 		{5285CC62-3FDD-4D9A-AB9F-71E425CCB66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5285CC62-3FDD-4D9A-AB9F-71E425CCB66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5285CC62-3FDD-4D9A-AB9F-71E425CCB66E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6EAC042-8A07-43FB-B5E7-122868F1006E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6EAC042-8A07-43FB-B5E7-122868F1006E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6EAC042-8A07-43FB-B5E7-122868F1006E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6EAC042-8A07-43FB-B5E7-122868F1006E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{919D9D1A-2FC9-49D7-8086-2E144816E88C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{919D9D1A-2FC9-49D7-8086-2E144816E88C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{919D9D1A-2FC9-49D7-8086-2E144816E88C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{919D9D1A-2FC9-49D7-8086-2E144816E88C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14651D1E-C8C1-4574-8A19-BB6991024742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14651D1E-C8C1-4574-8A19-BB6991024742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14651D1E-C8C1-4574-8A19-BB6991024742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14651D1E-C8C1-4574-8A19-BB6991024742}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5285CC62-3FDD-4D9A-AB9F-71E425CCB66E} = {2E65B37E-8FD8-49BC-BAF4-A3BF117F94D4}
-		{5AA8B531-FB0C-4538-86BD-DC198162C60A} = {E59AF519-C9C0-400E-AD51-9A4FACC8D5B3}
+		{C6EAC042-8A07-43FB-B5E7-122868F1006E} = {E59AF519-C9C0-400E-AD51-9A4FACC8D5B3}
+		{919D9D1A-2FC9-49D7-8086-2E144816E88C} = {E59AF519-C9C0-400E-AD51-9A4FACC8D5B3}
+		{14651D1E-C8C1-4574-8A19-BB6991024742} = {E59AF519-C9C0-400E-AD51-9A4FACC8D5B3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9B698BDE-5EB4-4D33-95B6-945FE71B3FBF}
